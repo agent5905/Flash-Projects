@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<update xmlns="http://ns.adobe.com/air/framework/update/description/1.0">
+    <version>1.21</version>
+    <url>http://www.d4g.us/bby/update/Pre-Setup Tag Designer.air</url>
+    <description><![CDATA[
+         This version has fixes for the following known issues:
+         *Fixed online support feature to correctly display price since Best Buy.com
+did an update that changed things. This should also keep this from happening again 
+in the future.
+   ]]></description>
+</update>

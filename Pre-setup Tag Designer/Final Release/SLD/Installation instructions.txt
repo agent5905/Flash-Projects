@@ -1,0 +1,25 @@
+Installation instructions:
+
+1. To install the software package double click on install.bat
+	- When presented with the unknown publisher warning click on install
+	- Choose installation location and click continue
+	- When asked to install Adobe Air click continue
+	- If the program installed correctly the Side Liner Tag Designer will launch automatically
+		! You must have the Pre-Setup Tag Designer to run the program correctly
+		  if you do not have the Pre-Setup Tag Designer besure to download and install
+		  it before continuing.
+
+
+Enjoy the software, please email either Daniel Garcia or Jose Marin with any questions, bugs, 
+errors, or suggestions on improving the software.
+
+Thank you.
+
+Jose Marin
+(626)392-1966
+jose.marin@bestbuy.com
+
+Daniel Garcia
+(626)664-1612
+daniel.garcia@bestbuy.com
+			

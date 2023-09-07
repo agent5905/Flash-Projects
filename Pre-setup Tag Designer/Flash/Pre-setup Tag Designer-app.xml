@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><application xmlns="http://ns.adobe.com/air/application/1.5">
+
+  <id>com.adobe.example.Pre-setup-Tag-Designer</id>
+
+  <version>1.75</version>
+
+  <filename>Pre-Setup Tag Designer</filename>
+
+  <description>Application designed to make custom pre-setup tags for laptops.</description>
+
+  <name>Pre-Setup Tag Designer</name>
+
+  <copyright>2008</copyright>
+
+  <initialWindow>
+    <content>Pre-setup%20Tag%20Designer.swf</content>
+    <systemChrome>standard</systemChrome>
+    <transparent>false</transparent>
+    <visible>true</visible>
+    <maximizable>false</maximizable>
+    <minimizable>true</minimizable>
+    <resizable>false</resizable>
+  </initialWindow>
+
+  <icon>
+    <image128x128>AppIconsForAIRPublish/Presetup%20tag%20designer%20icon%20version(128).png</image128x128>
+    <image48x48>AppIconsForAIRPublish/Presetup%20tag%20designer%20icon%20version_48.png</image48x48>
+    <image32x32>AppIconsForAIRPublish/Presetup%20tag%20designer%20icon%20version_32.png</image32x32>
+    <image16x16>AppIconsForAIRPublish/Presetup%20tag%20designer%20icon%20version_16.png</image16x16>
+  </icon>
+
+  <customUpdateUI>false</customUpdateUI>
+
+  <allowBrowserInvocation>false</allowBrowserInvocation>
+
+
+  <programMenuFolder>Pre-Setup Tag Designer</programMenuFolder>
+
+</application>

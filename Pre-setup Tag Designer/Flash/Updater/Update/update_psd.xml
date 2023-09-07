@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<update xmlns="http://ns.adobe.com/air/framework/update/description/1.0">
+    <version>1.3</version>
+    <url>C:/Users/DAG/Desktop/Pre-setup Tag Designer/Flash/Updater/Update/myUpdate.air</url>
+    <description><![CDATA[
+         This version has fixes for the following known issues:
+         *Test to show jose
+         *Second issue   
+   ]]></description>
+</update>

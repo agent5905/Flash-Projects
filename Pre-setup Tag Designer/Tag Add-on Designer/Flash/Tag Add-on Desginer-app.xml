@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<application xmlns="http://ns.adobe.com/air/application/1.5">
+
+  <id>com.adobe.example.Tag-Add-on-Desginer</id>
+
+  <version>1.2.2</version>
+
+  <filename>Side Liner Tag Desginer</filename>
+
+  <description>Application designed to make custom side liner tags for laptop displays.</description>
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+<!-- To localize the description, use the following format for the description element.<description><text xml:lang="en">English App description goes here</text><text xml:lang="fr">French App description goes here</text><text xml:lang="ja">Japanese App description goes here</text></description>-->
+
+  <name>Side Liner Tag Designer</name>
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+<!-- To localize the name, use the following format for the name element.<name><text xml:lang="en">English App name goes here</text><text xml:lang="fr">French App name goes here</text><text xml:lang="ja">Japanese App name goes here</text></name>-->
+
+  <copyright>2008</copyright>
+
+  <initialWindow>
+    <content>Tag%20Add-on%20Desginer.swf</content>
+    <systemChrome>standard</systemChrome>
+    <transparent>false</transparent>
+    <visible>true</visible>
+    <maximizable>false</maximizable>
+    <minimizable>true</minimizable>
+    <resizable>false</resizable>
+  </initialWindow>
+
+  <icon>
+    <image128x128>AppIconsForAIRPublish/SideLiner%20Designer%20Icon_128.png</image128x128>
+    <image48x48>AppIconsForAIRPublish/SideLiner%20Designer%20Icon_48.png</image48x48>
+    <image32x32>AppIconsForAIRPublish/SideLiner%20Designer%20Icon_32.png</image32x32>
+    <image16x16>AppIconsForAIRPublish/SideLiner%20Designer%20Icon_16.png</image16x16>
+  </icon>
+
+  <customUpdateUI>false</customUpdateUI>
+
+  <allowBrowserInvocation>false</allowBrowserInvocation>
+
+  
+
+  <programMenuFolder>Side Liner Tag Designer</programMenuFolder>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</application>

@@ -1,0 +1,490 @@
+<skulist>
+  <item sku="9102017">
+    <brand>HEWLETT PACKARD</brand>
+    <model>DV4-1114NR</model>
+    <price>749.99</price>
+    <tittle>INTEL CENTRINO CORE 2 DUO T5800 PRE-SETUP NOTEBOOK</tittle>
+    <ram>3</ram>
+    <hd>160</hd>
+  </item>
+  <item sku="9027661">
+    <brand>HEWLETT PACKARD</brand>
+    <model>DV5-1125NR</model>
+    <price>799.99</price>
+    <tittle>AMD TURION X2 DUAL CORE RM-72 PRE-SETUP NOTEBOOK</tittle>
+    <ram>4</ram>
+    <hd>250</hd>
+  </item>
+  <item sku="9033654">
+    <brand>TOSHIBA</brand>
+    <model>U405D-S2874</model>
+    <price>799.99</price>
+    <tittle>AMD TURION X2 DUAL-CORE PRE SET UP COMPUTER</tittle>
+    <ram>4</ram>
+    <hd>250</hd>
+  </item>
+  <item sku="9027705">
+    <brand>HEWLETT PACKARD</brand>
+    <model>DV4-1125NR</model>
+    <price>649.99</price>
+    <tittle>INTEL CORE 2 DUO PROCESSOR PRESETUP COMPUTER</tittle>
+    <ram>4</ram>
+    <hd>250</hd>
+  </item>
+  <item sku="9053196">
+    <brand>GATEWAY</brand>
+    <model>MC7801U</model>
+    <price>749.99</price>
+    <tittle>INTEL CORE 2 DUO PROCESSOR PRE SET UP COMPUTER</tittle>
+    <ram>4</ram>
+    <hd>320</hd>
+  </item>
+  <item sku="9022979">
+    <brand>TOSHIBA</brand>
+    <model>E105-S1402</model>
+    <price>1099.99</price>
+    <tittle>INTEL CENTRINO CORE 2 DUO PRESETUP PACKAGE</tittle>
+    <ram>4</ram>
+    <hd>320</hd>
+  </item>
+  <item sku="9050055">
+    <brand>ASUS</brand>
+    <model>X83VM-X1</model>
+    <price>899.99</price>
+    <tittle>INTEL CORE 2 DUO T8400 PRE SET UP COMPUTER</tittle>
+    <ram>4</ram>
+    <hd>320</hd>
+  </item>
+  <item sku="9119875">
+    <brand>DELL</brand>
+    <model>I1420-142B</model>
+    <price>599.99</price>
+    <tittle>INTEL CORE 2 DUO PROCESSOR PRESETUP COMPUTER</tittle>
+    <ram>4</ram>
+    <hd>250</hd>
+  </item>
+  <item sku="9027698">
+    <brand>COMPAQ</brand>
+    <model>CQ50-215NR</model>
+    <price>399.99</price>
+    <tittle>AMD ATHLON X2 DUAL CORE PRESETUP COMPUTER</tittle>
+    <ram>2</ram>
+    <hd>160</hd>
+  </item>
+  <item sku="9050242">
+    <brand>ASUS</brand>
+    <model>X83VB-X1</model>
+    <price>849.99</price>
+    <tittle>INTEL CENTRINO CORE 2 DUO T5800 PRESETUP COMPUTER</tittle>
+    <ram>4</ram>
+    <hd>250</hd>
+  </item>
+  <item sku="8950806">
+    <brand>SONY</brand>
+    <model>VGN-Z520NB</model>
+    <price>1999.99</price>
+    <tittle>INTEL CENTRINO CORE 2 DUO P8400 PRESETUP LAPTOP</tittle>
+    <ram>3</ram>
+    <hd>250</hd>
+  </item>
+  <item sku="9053098">
+    <brand>ACER</brand>
+    <model>AS6930-6809</model>
+    <price>699.99</price>
+    <tittle>INTEL CENTRINO CORE 2 DUO T5800 PRE-SETUP LAPTOP</tittle>
+    <ram>3</ram>
+    <hd>320</hd>
+  </item>
+  <item sku="9057058">
+    <brand>EMACHINES</brand>
+    <model>EMD620-5777</model>
+    <price>329.99</price>
+    <tittle>AMD ATHLON 2650E SINGLE CORE PRESETUP LAPTOP</tittle>
+    <ram>1</ram>
+    <hd>160</hd>
+  </item>
+  <item sku="9101928">
+    <brand>ACER</brand>
+    <model>AS5735-4774</model>
+    <price>499.99</price>
+    <tittle>INTEL PENTIUM DUAL CORE T3200 PRE-SETUP LAPTOP</tittle>
+    <ram>2</ram>
+    <hd>160</hd>
+  </item>
+  <item sku="8989008">
+    <brand>DELL</brand>
+    <model>I1525-139B</model>
+    <price>649.99</price>
+    <tittle>INTEL PENTIUM DUAL CORE T3200 PRE-SETUP LAPTOP</tittle>
+    <ram>3</ram>
+    <hd>160</hd>
+  </item>
+  <item sku="8989026">
+    <brand>DELL</brand>
+    <model>S1535-143B</model>
+    <price>849.99</price>
+    <tittle>INTEL CENTRINO CORE 2 DUO T5800 PRE-SETUP LAPTOP</tittle>
+    <ram>4</ram>
+    <hd>320</hd>
+  </item>
+  <item sku="8989035">
+    <brand>DELL</brand>
+    <model>X1330-146B</model>
+    <price>1099.99</price>
+    <tittle>INTEL CENTRINO CORE 2 DUO T8100 PRE-SETUP LAPTOP</tittle>
+    <ram>4</ram>
+    <hd>320</hd>
+  </item>
+  <item sku="8989124">
+    <brand>DELL</brand>
+    <model>X1530-147B</model>
+    <price>1299.99</price>
+    <tittle>INTEL CENTRINO CORE 2 DUO T8100 PRE-SETUP COMPUTER</tittle>
+    <ram>4</ram>
+    <hd>320</hd>
+  </item>
+  <item sku="9037311">
+    <brand>GATEWAY</brand>
+    <model>T-6330U</model>
+    <price>649.99</price>
+    <tittle>INTEL PENTIUM DUAL CORE T3200 PRE-SETUP LAPTOP</tittle>
+    <ram>3</ram>
+    <hd>250</hd>
+  </item>
+  <item sku="9027652">
+    <brand>HEWLETT PACKARD</brand>
+    <model>G60-125NR</model>
+    <price>749.99</price>
+    <tittle>AMD TURION X2 DUAL CORE RM-70 PRE-SETUP COMPUTER</tittle>
+    <ram>3</ram>
+    <hd>250</hd>
+  </item>
+  <item sku="9027689">
+    <brand>HEWLETT PACKARD</brand>
+    <model>DV4-1155SE</model>
+    <price>999.99</price>
+    <tittle>AMD TURION X2 ULTRA MOBILE ZM-82 PRE-SETUP LAPTOP</tittle>
+    <ram>4</ram>
+    <hd>320</hd>
+  </item>
+  <item sku="9027714">
+    <brand>HEWLETT PACKARD</brand>
+    <model>DV3510NR</model>
+    <price>1099.99</price>
+    <tittle>INTEL CENTRINO CORE 2 DUO P7350 PRE-SETUP LAPTOP</tittle>
+    <ram>4</ram>
+    <hd>320</hd>
+  </item>
+  <item sku="9032986">
+    <brand>HEWLETT PACKARD</brand>
+    <model>DV7-1135NR</model>
+    <price>799.99</price>
+    <tittle>AMD TURION X2 DUAL CORE RM-70 PRE-SETUP LAPTOP</tittle>
+    <ram>4</ram>
+    <hd>250</hd>
+  </item>
+  <item sku="9051624">
+    <brand>HEWLETT PACKARD</brand>
+    <model>DV4-1145GO</model>
+    <price>949.99</price>
+    <tittle>INTEL CENTRINO CORE 2 DUO T5800</tittle>
+    <ram>4</ram>
+    <hd>320</hd>
+  </item>
+  <item sku="9053007">
+    <brand>HEWLETT PACKARD</brand>
+    <model>DV7-1175NR</model>
+    <price>1149.99</price>
+    <tittle>INTEL CENTRINO CORE 2 DUO T5800 PRE-SETUP LAPTOP</tittle>
+    <ram>4</ram>
+    <hd>320</hd>
+  </item>
+  <item sku="8892996">
+    <brand>SONY</brand>
+    <model>VGN-FW140EH</model>
+    <price>829.99</price>
+    <tittle>INTEL CENTRINO CORE 2 DUO P8400 PRE-SETUP LAPTOP</tittle>
+    <ram>3</ram>
+    <hd>250</hd>
+  </item>
+  <item sku="8934497">
+    <brand>SONY</brand>
+    <model>VGN-AR825E</model>
+    <price>1299.99</price>
+    <tittle>INTEL CENTRINO CORE 2 DUO T5750 PRE-SETUP LAPTOP</tittle>
+    <ram>3</ram>
+    <hd>320</hd>
+  </item>
+  <item sku="9032977">
+    <brand>SONY</brand>
+    <model>VGN-NS140EW</model>
+    <price>799.99</price>
+    <tittle>INTEL CENTRINO CORE 2 DUO T5800 PRE-SETUP LAPTOP</tittle>
+    <ram>3</ram>
+    <hd>250</hd>
+  </item>
+  <item sku="9033048">
+    <brand>SONY</brand>
+    <model>VGN-NS190JL</model>
+    <price>899.99</price>
+    <tittle>INTEL CENTRINO CORE 2 DUO T5800 PRE-SETUP LAPTOP</tittle>
+    <ram>4</ram>
+    <hd>250</hd>
+  </item>
+  <item sku="9034225">
+    <brand>SONY</brand>
+    <model>VGN-FW235JH</model>
+    <price>899.99</price>
+    <tittle>INTEL CENTRINO CORE 2 DUO T5800 PRE-SETUP LAPTOP</tittle>
+    <ram>4</ram>
+    <hd>250</hd>
+  </item>
+  <item sku="9034341">
+    <brand>SONY</brand>
+    <model>VGN-FW270JW</model>
+    <price>1199.99</price>
+    <tittle>INTEL CENTRINO CORE 2 DUO P8400 PRE-SETUP LAPTOP</tittle>
+    <ram>4</ram>
+    <hd>320</hd>
+  </item>
+  <item sku="8918442">
+    <brand>TOSHIBA</brand>
+    <model>M305D-S4830</model>
+    <price>849.99</price>
+    <tittle>AMD TURION X2 ULTRA DUAL CORE ZM-80 PRE-SETUP LAPTOP</tittle>
+    <ram>4</ram>
+    <hd>250</hd>
+  </item>
+  <item sku="9027732">
+    <brand>TOSHIBA</brand>
+    <model>A305-S6872</model>
+    <price>749.99</price>
+    <tittle>INTEL CENTRINO CORE 2 DUO T5800 PRE-SETUP LAPTOP</tittle>
+    <ram>3</ram>
+    <hd>250</hd>
+  </item>
+  <item sku="9036009">
+    <brand>TOSHIBA</brand>
+    <model>M305-S4848</model>
+    <price>849.99</price>
+    <tittle>INTEL CENTRINO CORE 2 DUO T5800 PRE-SETUP LAPTOP</tittle>
+    <ram>4</ram>
+    <hd>250</hd>
+  </item>
+  <item sku="9038178">
+    <brand>TOSHIBA</brand>
+    <model>L305D-S5892</model>
+    <price>379.99</price>
+    <tittle>AMD TURION X2 DUAL CORE TL-60 PRE-SETUP LAPTOP</tittle>
+    <ram>3</ram>
+    <hd>160</hd>
+  </item>
+  <item sku="9050171">
+    <brand>ASUS</brand>
+    <model>EPC1000HD</model>
+    <price>349.99</price>
+    <tittle>INTEL CELERON PROCESSOR 353 PRE-SETUP NETBOOK</tittle>
+    <ram>1</ram>
+    <hd>120</hd>
+  </item>
+  <item sku="9050206">
+    <brand>ASUS</brand>
+    <model>EEEPC900A</model>
+    <price>279.99</price>
+    <tittle>INTEL ATOM PROCESSOR N270 NETBOOK</tittle>
+    <ram>1</ram>
+    <hd>4</hd>
+  </item>
+  <item sku="9125653">
+    <brand>HEWLETT PACKARD</brand>
+    <model>1030NR</model>
+    <price>449.99</price>
+    <tittle>INTEL ATOM PROCESSOR N270 NETBOOK</tittle>
+    <ram>1</ram>
+    <hd>16</hd>
+  </item>
+  <item sku="9050279">
+    <brand>ASUS</brand>
+    <model>G50VT-X1</model>
+    <price>1249.99</price>
+    <tittle>INTEL CENTRINO CORE 2 DUO P8400 PRE-SETUP LAPTOP</tittle>
+    <ram>4</ram>
+    <hd>320</hd>
+  </item>
+  <item sku="9036483">
+    <brand>TOSHIBA</brand>
+    <model>X305-Q705</model>
+    <price>1549.99</price>
+    <tittle>INTEL CENTRINO CORE 2 DUO P7350 PRE-SETUP LAPTOP</tittle>
+    <ram>4</ram>
+    <hd>320</hd>
+  </item>
+  <item sku="9119768">
+    <brand>ACER</brand>
+    <model>EX4630-4658</model>
+    <price>449.99</price>
+    <tittle>INTEL PENTIUM DUAL CORE PRESETUP COMPUTER</tittle>
+    <ram>2</ram>
+    <hd>120</hd>
+  </item>
+  <item sku="9033253">
+    <brand>SONY</brand>
+    <model>VGN-CS110E/R</model>
+    <price>849.99</price>
+    <tittle>INTEL PENTIUM CORE 2 DUO PROCESSOR T5800 PRESETUP</tittle>
+    <ram>3</ram>
+    <hd>250</hd>
+  </item>
+  <item sku="9035572">
+    <brand>TOSHIBA</brand>
+    <model>L305D-S5895</model>
+    <price>479.99</price>
+    <tittle>AMD TURION 64 X2 DUAL CORE TL-60 PRE-SETUP LAPTOP</tittle>
+    <ram>3</ram>
+    <hd>250</hd>
+  </item>
+  <item sku="8989017">
+    <brand>DELL</brand>
+    <model>I1525-140B</model>
+    <price>579.99</price>
+    <tittle>INTEL CENTRINO CORE 2 DUO T5800 PRE-SETUP LAPTOP</tittle>
+    <ram>3</ram>
+    <hd>250</hd>
+  </item>
+  <item sku="9074226">
+    <brand>HEWLETT PACKARD</brand>
+    <model>A6655F</model>
+    <price>659.99</price>
+    <tittle>AMD PHENOM X4 9150E PRE-SETUP PACKAGE COMPUTER</tittle>
+    <ram>5</ram>
+    <hd>640</hd>
+  </item>
+  <item sku="9062373">
+    <brand>HEWLETT PACKARD</brand>
+    <model>A6620</model>
+    <price>569.99</price>
+    <tittle>INTEL PENTIUM DUAL CORE E5200 PRE-SETUP DESKTOP</tittle>
+    <ram>4</ram>
+    <hd>500</hd>
+  </item>
+  <item sku="9031612">
+    <brand>GATEWAY</brand>
+    <model>LX6200-01</model>
+    <price>779.99</price>
+    <tittle>AMD PHENOM X4 QUAD CORE 9500 PRE-SETUP DESKTOP</tittle>
+    <ram>8</ram>
+    <hd>750</hd>
+  </item>
+  <item sku="9031629">
+    <brand>EMACHINES</brand>
+    <model>ET1161-01</model>
+    <price>299.99</price>
+    <tittle>AMD ATHLON X2 LE1600</tittle>
+    <ram>1</ram>
+    <hd>160</hd>
+  </item>
+  <item sku="9023004">
+    <brand>COMPAQ</brand>
+    <model>SR5605F</model>
+    <price>329.99</price>
+    <tittle>AMD ATHLON LE1640 PRE-SETUP DESKTOP COMPUTER</tittle>
+    <ram>1</ram>
+    <hd>250</hd>
+  </item>
+  <item sku="9053191">
+    <brand>GATEWAY</brand>
+    <model>MC7801U</model>
+    <price>749.99</price>
+    <tittle>INTEL CORE 2 DUO PROCESSOR PRE SET UP COMPUTER</tittle>
+    <ram>4</ram>
+    <hd>320</hd>
+  </item>
+  <item sku="9084475">
+    <brand>SONY</brand>
+    <model>VGN-FW245JHC</model>
+    <price>999.99</price>
+    <tittle>INTEL CENTRINO CORE 2 DUO PRE-SETUP LAPTOP</tittle>
+    <ram>4</ram>
+    <hd>250</hd>
+  </item>
+  <item sku="8977823">
+    <brand>DELL</brand>
+    <model>HYBRID-118B</model>
+    <price>649.99</price>
+    <tittle>INTEL CENTRINO CORE 2 DUO T5850 PRESETUP DESKTOP</tittle>
+    <ram>3</ram>
+    <hd>250</hd>
+  </item>
+  <item sku="9036027">
+    <brand>TOSHIBA</brand>
+    <model>A305-S6898</model>
+    <price>949.99</price>
+    <tittle>INTEL CENTRINO CORE 2 DUO PRESETUP COMPUTER</tittle>
+    <ram>4</ram>
+    <hd>320</hd>
+  </item>
+  <item sku="9101973">
+    <brand>HEWLETT PACKARD</brand>
+    <model>DV4-1117NR</model>
+    <price>599.99</price>
+    <tittle>INTEL CORE 2 DUO PROCESSOR PRE-SETUP LAPTOP</tittle>
+    <ram>4</ram>
+    <hd>250</hd>
+  </item>
+  <item sku="9035732">
+    <brand>TOSHIBA</brand>
+    <model>L355D-S7825</model>
+    <price>699.99</price>
+    <tittle>AMD TURION 64 X2 DUAL CORE PRESETUP COMPUTER</tittle>
+    <ram>3</ram>
+    <hd>250</hd>
+  </item>
+  <item sku="9115735">
+    <brand>SONY</brand>
+    <model>VGN-NS110EW</model>
+    <price>649.99</price>
+    <tittle>INTEL PENTIUM DUAL CORE T3200 PRE-SETUP LAPTOP</tittle>
+    <ram>2</ram>
+    <hd>160</hd>
+  </item>
+  <item sku="9123584">
+    <brand>DELL</brand>
+    <model>I1318-141B</model>
+    <price>799.99</price>
+    <tittle>INTEL CORE 2 DUO T5800 PRE-SETUP LAPTOP</tittle>
+    <ram>3</ram>
+    <hd>250</hd>
+  </item>
+  <item sku="9062364">
+    <brand>HEWLETT PACKARD</brand>
+    <model>M9402F</model>
+    <price>819.99</price>
+    <tittle>AMD PHENOM X4 9650 QUAD-CORE PROCESSOR</tittle>
+    <ram>7</ram>
+    <hd>640</hd>
+  </item>
+  <item sku="9013676">
+    <brand>HEWLETT PACKARD</brand>
+    <model>A6600F</model>
+    <price>499.99</price>
+    <tittle>INTEL PENTIUM E2200 DUAL-CORE PROCESSOR</tittle>
+    <ram>3</ram>
+    <hd>320</hd>
+  </item>
+  <item sku="9013872">
+    <brand>DELL</brand>
+    <model>L530-115B</model>
+    <price>599.99</price>
+    <tittle>INTEL CORE 2 DUO E7300 PROCESSOR</tittle>
+    <ram>4</ram>
+    <hd>640</hd>
+  </item>
+  <item sku="9038016">
+    <brand>TOSHIBA</brand>
+    <model>L305-S5899</model>
+    <price>549.99</price>
+    <tittle>INTEL PENTIUM DUAL CORE T3200 PRE-SETUP LAPTOP</tittle>
+    <ram>2</ram>
+    <hd>120</hd>
+  </item>
+</skulist>

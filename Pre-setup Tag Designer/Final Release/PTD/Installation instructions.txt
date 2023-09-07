@@ -1,0 +1,30 @@
+Installation instructions:
+
+1. To install the software package double click on install.bat
+	- When presented with the unknown publisher warning click on install
+	- Choose installation location and click continue
+	- When asked to install Adobe Air click continue
+	- If the program installed correctly the Pre-setup Tag Designer will launch automatically
+		- When launched for the first time, it will prompt:
+			"This is our first time running the PDS. A xml file has been created to 
+			 store your items." - This means that no skus are in the database - use the 
+			 add sku list.bat to import the skus list.
+
+2. Included with the software launch is a complete xml with 61 sku preloaded.  This should cover
+the majority of the units that are currently carried by most stores. Just type in the sku of the PC
+of choice and the autoloader should load up the information. Remember, any additional skus should
+be keyed manually using the Pre-setup software text fields.  
+
+Enjoy the software, please email either Daniel Garcia or Jose Marin with any questions, bugs, 
+errors, or suggestions on improving the software.
+
+Thank you.
+
+Jose Marin
+(626)392-1966
+jose.marin@bestbuy.com
+
+Daniel Garcia
+(626)664-1612
+daniel.garcia@bestbuy.com
+			

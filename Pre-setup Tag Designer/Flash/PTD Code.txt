@@ -1,0 +1,942 @@
+import dag.Printing
+import dag.Writing
+import flash.net.*
+import flash.filesystem.*;
+import fl.managers.FocusManager;
+import flash.events.*;
+import dag.FlashUpdater
+
+import air.update.ApplicationUpdater;
+var appUpdater:ApplicationUpdater = new ApplicationUpdater(); 
+
+var tmpBTP:Number;
+var packPrice:Number = 0;
+var softPrice:Number = 0;
+var officePrice:String = "";
+var totalPrice:String = "";
+var lineNum:Number = 1;
+var lineLists:Array = new Array();
+
+var obj:InteractiveObject;
+var newClick = new MouseEvent(MouseEvent.CLICK);
+var fm:FocusManager = new FocusManager(this);
+var fm2:FocusManager = new FocusManager(this);
+
+var loadXml:XML;
+var xmlSku:XML;
+var loader:URLLoader = new URLLoader();
+var loader2:URLLoader = new URLLoader();
+
+var loader3:URLLoader = new URLLoader();
+
+loader3.addEventListener(IOErrorEvent.IO_ERROR, onIOError3, false, 0, true);
+loader3.load( new URLRequest(File.documentsDirectory.resolvePath("xml/skulist.xml").url));
+
+sku.addEventListener(Event.CHANGE, changeHandlerS);
+brand.addEventListener(Event.CHANGE, changeTHandler);
+model.addEventListener(Event.CHANGE, changeTHandler);
+price.addEventListener(Event.CHANGE, changeTHandler);
+office.office.addEventListener(Event.CHANGE, changeTHandler);
+titleT.addEventListener(Event.CHANGE, changeTHandler);
+ram.addEventListener(Event.CHANGE, changeTHandler);
+hd.addEventListener(Event.CHANGE, changeTHandler);
+
+sku.addEventListener(FocusEvent.FOCUS_IN, focusInHandler);
+brand.addEventListener(FocusEvent.FOCUS_IN, focusInHandler);
+model.addEventListener(FocusEvent.FOCUS_IN, focusInHandler);
+price.addEventListener(FocusEvent.FOCUS_IN, focusInHandler);
+office.office.addEventListener(FocusEvent.FOCUS_IN, focusInHandler);
+titleT.addEventListener(FocusEvent.FOCUS_IN, focusInHandler);
+ram.addEventListener(FocusEvent.FOCUS_IN, focusInHandler);
+hd.addEventListener(FocusEvent.FOCUS_IN, focusInHandler);
+
+sku.tabIndex = 1;
+//load_button.tabIndex = 2;
+brand.tabIndex = 2;
+model.tabIndex = 3;
+price.tabIndex = 4;
+titleT.tabIndex = 5
+ram.tabIndex = 6;
+hd.tabIndex = 7;
+
+var test:TextInput = new TextInput();
+var testb:Button = new Button();
+
+sku.restrict = "0-9";
+brand.restrict = "A-Za-z ";
+model.restrict = "A-Za-z\\-0-9"
+price.restrict = ".0-9"
+titleT.restrict = "A-Za-z\\-0-9 "
+ram.restrict = "0-9";
+hd.restrict = "0-9";
+
+office.office.restrict = ".0-9"
+
+
+bundle.tabIndex = 8;
+software.software.tabIndex = 9;
+office.office.tabIndex = 10;
+
+save_button.tabIndex = 11;
+clear_button.tabIndex = 12;
+print_button.tabIndex = 13;
+
+
+fm.setFocus(sku);
+fm2.deactivate();
+
+
+bundle.addEventListener(Event.CHANGE, changeHandler);
+software.software.addEventListener(Event.CHANGE, changeSHandler);
+
+print_button.addEventListener(MouseEvent.CLICK, print_buttonClick);
+clear_button.addEventListener(MouseEvent.CLICK, clear_buttonClick);
+save_button.addEventListener(MouseEvent.CLICK, save_buttonClick);
+//load_button.addEventListener(MouseEvent.CLICK, load_buttonClick);
+popup.ok_button.addEventListener(MouseEvent.CLICK, ok_buttonClick);
+stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUpPress);
+
+fm.defaultButtonEnabled = true;
+fm.defaultButton  = popup.ok_button;
+
+var checkUpdate:FlashUpdater = new FlashUpdater("http://www.d4g.us/bby/update/update_psd.xml");
+function onKeyUpPress(e:KeyboardEvent):void {
+      trace(e);
+	  if(e.ctrlKey){
+		switch(e.keyCode){
+			case 76:
+			load_buttonClick(newClick);
+			break;
+			case 83:
+			save_buttonClick(newClick);
+			break;
+			case 80:
+			print_buttonClick(newClick);
+			break;
+			case 67:
+			clear_buttonClick(newClick);
+			break;
+		}
+	  }
+}
+
+
+//var prints:Printing = new Printing();
+
+disable_mc.visible = false;
+popup.visible = false;
+
+software.visible = false;
+office.visible = false;
+tag.bundle.totprice2.visible = false;
+tag.bundle.totprice.visible = false;
+tag.bundle.totcents.visible = false;
+
+tag.c1.visible = false;
+tag.c2.visible = false;
+tag.c3.visible = false;
+tag.c4.visible = false;
+tag.c5.visible = false;
+
+function focusInHandler(e:FocusEvent):void {
+      e.currentTarget.setSelection(e.currentTarget.length, e.currentTarget.length);
+}
+
+function changeTHandler(e:Event):void {
+	
+	updateTagText();
+}
+function changeHandlerS(e:Event):void {
+	if(sku.text != ""){
+	load_buttonClick(MouseEvent(newClick));
+	}else{
+    status.gotoAndStop(1);
+	}
+	tag.sku.text = sku.text;
+}
+function changeHandler(e:Event):void {
+       
+       tag.bundle.gotoAndStop(Number(ComboBox(e.target).selectedItem.data) + 1);
+	
+	tag.bundle.officeprice1.text = "";
+	tag.bundle.officeprice2.text = "";
+	tag.bundle.officeprice3.text = "";
+	
+	switch(Number(ComboBox(e.target).selectedItem.data)){
+		case 0:
+			packPrice = 0;
+			officePrice = "";
+			software.visible = false;
+			office.visible = false;
+			software.software.selectedIndex = 0;
+			tag.bundle.software.gotoAndStop(1);
+			//tag.bundle.totprice2.visible = false;
+			//tag.bundle.totprice.visible = false;
+			//tag.bundle.totcents.visible = false;
+			break;
+		case 1:
+			software.visible = true;
+			packPrice = 160;
+			office.visible = false;
+			office.office.text = "";
+			officePrice = "";
+			if(Number(software.software.selectedItem.data) == 5 || Number(software.software.selectedItem.data) == 6){
+				packPrice = 130;
+			}
+			//tag.bundle.totprice2.visible = true;
+			//tag.bundle.totprice.visible = true;
+			//tag.bundle.totcents.visible = true;
+			break;
+		case 2:
+			software.visible = true;
+			packPrice = 130;
+			office.visible = false;
+			office.office.text = "";
+			officePrice = "";
+			if(Number(software.software.selectedItem.data) == 5 || Number(software.software.selectedItem.data) == 6){
+				packPrice = 90;
+			}
+			//tag.bundle.totprice2.visible = true;
+			//tag.bundle.totprice.visible = true;
+			//tag.bundle.totcents.visible = true;
+			break;
+		case 3:
+			software.visible = true;
+			packPrice = 180;
+			office.visible = true;
+			if(Number(software.software.selectedItem.data) == 5 || Number(software.software.selectedItem.data) == 6){
+				packPrice = 150;
+			}
+			//tag.bundle.totprice2.visible = true;
+			//tag.bundle.totprice.visible = true;
+			//tag.bundle.totcents.visible = true;
+			tag.bundle.officeprice1.text = "$" + officePrice;
+			tag.bundle.officeprice2.text = "";
+			tag.bundle.officeprice3.text = "";
+			break;
+		case 4:
+			software.visible = true;
+			packPrice = 210;
+			office.visible = true;
+			if(Number(software.software.selectedItem.data) == 5 || Number(software.software.selectedItem.data) == 6){
+				packPrice = 180;
+			}
+			//tag.bundle.totprice2.visible = true;
+			//tag.bundle.totprice.visible = true;
+			//tag.bundle.totcents.visible = true;
+			tag.bundle.officeprice1.text = "";
+			tag.bundle.officeprice2.text = "$" + officePrice;
+			tag.bundle.officeprice3.text = "";
+			break;
+		case 5:
+			software.visible = false;
+			software.software.selectedIndex = 0;
+			tag.bundle.software.gotoAndStop(1);
+			packPrice = 110;
+			office.visible = true;
+			//tag.bundle.totprice2.visible = true;
+			//tag.bundle.totprice.visible = true;
+			//tag.bundle.totcents.visible = true;
+			tag.bundle.officeprice1.text = "";
+			tag.bundle.officeprice2.text = "";
+			tag.bundle.officeprice3.text = "$" + officePrice;
+			break;
+		case 6:
+			software.visible = false;
+			software.software.selectedIndex = 0;
+			tag.bundle.software.gotoAndStop(1);
+			packPrice = 60;
+			office.visible = false;
+			office.office.text = "";
+			officePrice = "";
+			//tag.bundle.totprice2.visible = true;
+			//tag.bundle.totprice.visible = true;
+			//tag.bundle.totcents.visible = true;
+			break;
+		case 7:
+			software.visible = true;
+			packPrice = 280;
+			office.visible = false;
+			office.office.text = "";
+			officePrice = "";
+			if(Number(software.software.selectedItem.data) == 5 || Number(software.software.selectedItem.data) == 6){
+				packPrice = 250;
+			}
+			//tag.bundle.totprice2.visible = true;
+			//tag.bundle.totprice.visible = true;
+			//tag.bundle.totcents.visible = true;
+			break;
+	}
+			totalPrice = String(Number(price.text) + packPrice + Number(officePrice));
+			
+		if(totalPrice.length <= 6){
+		   if(totalPrice.indexOf(".") > -1){
+			   	tag.price2.text = "";
+				tag.price.text = totalPrice.substr(0,totalPrice.indexOf("."));
+				tag.cents.text = totalPrice.substring(totalPrice.indexOf(".") + 1,totalPrice.length);
+		   }else if(totalPrice != ""){
+			    tag.price2.text = "";
+				tag.price.text = totalPrice;
+				tag.cents.text = "00";
+		   }else{
+		   		tag.price2.text = "";
+				tag.price.text = "";
+				tag.cents.text = "";
+		   }
+		}else if(totalPrice.length > 6){
+				tag.price.text = "";
+				tag.price2.text = totalPrice.substr(0,totalPrice.indexOf("."));
+				tag.cents.text = totalPrice.substring(totalPrice.indexOf(".") + 1,totalPrice.length);
+		}
+		updateTag();
+}
+
+function changeSHandler(e:Event):void {
+       
+       tag.bundle.software.gotoAndStop(Number(ComboBox(e.target).selectedItem.data) + 1);
+
+
+		switch(Number(bundle.selectedItem.data)){
+		case 0:
+			packPrice = 0;
+			officePrice = "";
+			software.visible = false;
+			office.visible = false;
+			software.software.selectedIndex = 0;
+			tag.bundle.software.gotoAndStop(1);
+			//tag.bundle.totprice2.visible = false;
+			//tag.bundle.totprice.visible = false;
+			//tag.bundle.totcents.visible = false;
+			break;
+		case 1:
+			software.visible = true;
+			packPrice = 160;
+			office.visible = false;
+			office.office.text = "";
+			officePrice = "";
+			if(Number(software.software.selectedItem.data) == 5 || Number(software.software.selectedItem.data) == 6){
+				packPrice = 130;
+			}
+			//tag.bundle.totprice2.visible = true;
+			//tag.bundle.totprice.visible = true;
+			//tag.bundle.totcents.visible = true;
+			break;
+		case 2:
+			software.visible = true;
+			packPrice = 130;
+			office.visible = false;
+			office.office.text = "";
+			officePrice = "";
+			if(Number(software.software.selectedItem.data) == 5 || Number(software.software.selectedItem.data) == 6){
+				packPrice = 90;
+			}
+			//tag.bundle.totprice2.visible = true;
+			//tag.bundle.totprice.visible = true;
+			//tag.bundle.totcents.visible = true;
+			break;
+		case 3:
+			software.visible = true;
+			packPrice = 180;
+			office.visible = true;
+			if(Number(software.software.selectedItem.data) == 5 || Number(software.software.selectedItem.data) == 6){
+				packPrice = 150;
+			}
+			//tag.bundle.totprice2.visible = true;
+			//tag.bundle.totprice.visible = true;
+			//tag.bundle.totcents.visible = true;
+			tag.bundle.officeprice1.text = "$" + officePrice;
+			tag.bundle.officeprice2.text = "";
+			tag.bundle.officeprice3.text = "";
+			break;
+		case 4:
+			software.visible = true;
+			packPrice = 210;
+			office.visible = true;
+			if(Number(software.software.selectedItem.data) == 5 || Number(software.software.selectedItem.data) == 6){
+				packPrice = 180;
+			}
+			//tag.bundle.totprice2.visible = true;
+			//tag.bundle.totprice.visible = true;
+			//tag.bundle.totcents.visible = true;
+			tag.bundle.officeprice1.text = "";
+			tag.bundle.officeprice2.text = "$" + officePrice;
+			tag.bundle.officeprice3.text = "";
+			break;
+		case 5:
+			software.visible = false;
+			software.software.selectedIndex = 0;
+			tag.bundle.software.gotoAndStop(1);
+			packPrice = 110;
+			office.visible = true;
+			//tag.bundle.totprice2.visible = true;
+			//tag.bundle.totprice.visible = true;
+			//tag.bundle.totcents.visible = true;
+			tag.bundle.officeprice1.text = "";
+			tag.bundle.officeprice2.text = "";
+			tag.bundle.officeprice3.text = "$" + officePrice;
+			break;
+		case 6:
+			software.visible = false;
+			software.software.selectedIndex = 0;
+			tag.bundle.software.gotoAndStop(1);
+			packPrice = 60;
+			office.visible = false;
+			office.office.text = "";
+			officePrice = "";
+			//tag.bundle.totprice2.visible = true;
+			//tag.bundle.totprice.visible = true;
+			//tag.bundle.totcents.visible = true;
+			break;
+		case 7:
+			software.visible = true;
+			packPrice = 280;
+			office.visible = false;
+			office.office.text = "";
+			officePrice = "";
+			if(Number(software.software.selectedItem.data) == 5 || Number(software.software.selectedItem.data) == 6){
+				packPrice = 250;
+			}
+			//tag.bundle.totprice2.visible = true;
+			//tag.bundle.totprice.visible = true;
+			//tag.bundle.totcents.visible = true;
+			break;
+	}
+			totalPrice = String(Number(price.text) + packPrice + Number(officePrice));
+			
+		if(totalPrice.length <= 6){
+		   if(totalPrice.indexOf(".") > -1){
+			   	tag.price2.text = "";
+				tag.price.text = totalPrice.substr(0,totalPrice.indexOf("."));
+				tag.cents.text = totalPrice.substring(totalPrice.indexOf(".") + 1,totalPrice.length);
+		   }else if(totalPrice != ""){
+			    tag.price2.text = "";
+				tag.price.text = totalPrice;
+				tag.cents.text = "00";
+		   }else{
+		   		tag.price2.text = "";
+				tag.price.text = "";
+				tag.cents.text = "";
+		   }
+		}else if(totalPrice.length > 6){
+				tag.price.text = "";
+				tag.price2.text = totalPrice.substr(0,totalPrice.indexOf("."));
+				tag.cents.text = totalPrice.substring(totalPrice.indexOf(".") + 1,totalPrice.length);
+		}
+	
+	   updateTag();
+}
+
+function updateTag():void {
+	var lineList:Array = new Array();
+
+	switch(Number(software.software.selectedItem.data)){
+		case 1:
+			lineList.push("1YR. TREND MICRO AV");
+			lineList.push("1YR. SPY SWEEPER");
+			break;
+		case 2:
+			lineList.push("1YR. TREND MICRO IS");
+			break;
+		case 3:
+			lineList.push("1YR. KASPERSKY IS");
+			break;
+		case 4:
+			lineList.push("1YR. SPY SWEEPER WITH ANTIVIRUS");
+			break;
+		case 5:
+			lineList.push("1YR. TREND MICRO IS");
+			break;
+		case 6:
+			lineList.push("1YR. NORTON IS");
+			break;
+	}
+	switch(Number(bundle.selectedItem.data)){
+		case 1:
+			lineList.push("COMPUTER OPTIMIZATION");
+			lineList.push("SYSTEM RESTORE CD'S");
+			break;
+		case 2:
+			lineList.push("COMPUTER OPTIMIZATION");
+			break;
+		case 3:
+			lineList.push("COMPUTER OPTIMIZATION");
+			lineList.push("OFFICE HOME & STUD 2007");
+			break;
+		case 4:
+			lineList.push("COMPUTER OPTIMIZATION");
+			lineList.push("SYSTEM RESTORE CD'S");
+			lineList.push("OFFICE HOME & STUD 2007");
+			break;
+		case 5:
+			lineList.push("COMPUTER OPTIMIZATION");
+			lineList.push("OFFICE HOME & STUD 2007");
+			break;
+		case 6:
+			lineList.push("COMPUTER OPTIMIZATION");
+			lineList.push("SYSTEM RESTORE CD'S");
+			break;
+		case 7:
+			lineList.push("INHOME ROUTER SETUP WITH NETWORK SECURITY");
+			lineList.push("INHOME NEW PC SETUP");
+			lineList.push("COMPUTER OPTIMIZATION");
+			break;
+	}
+	
+      
+	   lineLists = lineList;
+	   writeLine();
+}
+
+
+function writeLine():void {
+	trace(lineLists[4] != null);
+	if( lineLists[0] != null){
+	tag.line1.text = lineLists[0];
+	tag.c1.visible = true;
+	}else{
+	tag.line1.text = "";
+	tag.c1.visible = false;
+	}
+	if( lineLists[1] != null){
+	tag.line2.text = lineLists[1];
+	tag.c2.visible = true;
+	}else{
+	tag.line2.text = "";
+	tag.c2.visible = false;
+	}
+	if( lineLists[2] != null){
+	tag.line3.text = lineLists[2];
+	tag.c3.visible = true;
+	}else{
+	tag.line3.text = "";
+	tag.c3.visible = false;
+	}
+	if( lineLists[3] != null){
+	tag.line4.text = lineLists[3];
+	tag.c4.visible = true;
+	}else{
+	tag.line4.text = "";
+	tag.c4.visible = false;
+	}
+	if( lineLists[4] != null){
+	tag.line5.text = lineLists[4];
+	tag.c5.visible = true;
+	}else{
+	tag.line5.text = "";
+	tag.c5.visible = false;
+	}
+       
+}
+
+function print_buttonClick(e:MouseEvent) {
+	if(checkPrintValues()){
+     var prints:Printing = new Printing(sku.text,brand.text.toUpperCase(),model.text.toUpperCase(),price.text,totalPrice,officePrice,titleT.text.toUpperCase(),ram.text,hd.text,Number(bundle.selectedItem.data) + 1,Number(software.software.selectedItem.data) + 1,lineLists);       
+	}
+}
+
+function clear_buttonClick(e:MouseEvent) {
+
+	sku.text = "";
+	brand.text = "";
+	model.text = "";
+	price.text = "";
+	titleT.text = "";
+	ram.text = "";
+	hd.text = "";
+	
+	packPrice = 0;
+	officePrice = "";
+	office.office.text = "";
+	software.visible = false;
+	office.visible = false;
+	software.software.selectedIndex = 0;
+	tag.bundle.software.gotoAndStop(1);
+	bundle.selectedIndex = 0;
+	tag.bundle.gotoAndStop(1);
+	
+	tag.bundle.officeprice1.text = "";
+	tag.bundle.officeprice2.text = "";
+	tag.bundle.officeprice3.text = "";
+	
+	software.visible = false;
+	office.visible = false;
+	//tag.bundle.totprice2.visible = false;
+	//tag.bundle.totprice.visible = false;
+	//tag.bundle.totcents.visible = false;
+
+	tag.c1.visible = false;
+	tag.c2.visible = false;
+	tag.c3.visible = false;
+	tag.c4.visible = false;
+	tag.c5.visible = false;
+	
+	tag.line1.text = "";
+	tag.line2.text = "";
+	tag.line3.text = "";
+	tag.line4.text = "";
+	tag.line5.text = "";
+	updateTagText()
+	fm.setFocus(sku);
+	status.gotoAndStop(1);
+}
+
+
+function save_buttonClick(e:MouseEvent) {
+if(checkSkuValues()){
+	loader2.addEventListener(Event.COMPLETE, onSComplete);
+	loader2.addEventListener(IOErrorEvent.IO_ERROR, onIOError, false, 0, true);
+	loader2.load( new URLRequest(File.documentsDirectory.resolvePath("xml/skulist.xml").url));
+}
+
+}
+
+function load_buttonClick(e:MouseEvent) {
+if(checkSkuValue()){
+loader.addEventListener(Event.COMPLETE, onComplete);
+loader.addEventListener(IOErrorEvent.IO_ERROR, onIOError, false, 0, true);
+loader.load( new URLRequest(File.documentsDirectory.resolvePath("xml/skulist.xml").url));
+}
+}
+
+function onComplete(e:Event):void {
+try{
+	loadXml = new XML(e.target.data)
+	
+	searchSku(loadXml);
+	
+	loader.removeEventListener(Event.COMPLETE, onComplete);
+	loader.removeEventListener (IOErrorEvent.IO_ERROR, onIOError);
+}catch(err:Error){
+	trace("Load Error:\n" + err.message);
+}
+																				   
+}
+
+function onIOError3(e:IOErrorEvent):void {
+
+	trace("Load 3 Error:\n" + e.text);
+	createXml();
+	   
+}
+
+function onSComplete(e:Event):void {
+try{
+	var loadXml = new XML(e.target.data);
+	//var attributes:XMLList = loadXml.*.(@sku == sku.text);
+	var cnt:Number = -1;
+	for each (var node in loadXml.item)
+{
+
+	cnt += 1;
+	if(node.@sku == sku.text){
+			delete loadXml.item[cnt];
+	}
+	status.gotoAndStop(2);
+	alertbox("Save succesful.");
+}
+
+	
+
+	
+	
+	 
+	
+	var tmpSku:XML = <item/>
+	tmpSku.@sku = sku.text;
+	tmpSku.brand = brand.text.toUpperCase();
+	tmpSku.model = model.text.toUpperCase();
+	tmpSku.price = price.text.toUpperCase();
+	tmpSku.tittle = titleT.text.toUpperCase();
+	tmpSku.ram = ram.text;
+	tmpSku.hd = hd.text;
+	
+	
+	loadXml.appendChild(tmpSku);
+	
+	//loadXml.prettyPrinting = true;
+
+	var writefile:Writing = new Writing(loadXml.toString());
+	status.gotoAndStop(2);
+	loader2.removeEventListener(Event.COMPLETE, onComplete);
+	loader2.removeEventListener (IOErrorEvent.IO_ERROR, onIOError);
+}catch(err:Error){
+	trace("Load 2 Error:\n" + err.message);
+}
+																				   
+}
+function createXml():void {
+
+var writefile:Writing = new Writing("<skulist> </skulist>");
+obj = sku;
+alertbox("This is our first time running the PSD. A xml file has been created to store your items.");
+}
+
+function onIOError(e:IOErrorEvent):void {
+trace("IO Error:\n" + e.text);
+}
+
+function searchSku(xml:XML):void{
+	var strXml:String = String(xml.*.(@sku == sku.text));
+	trace("XML NODE" + strXml + "End");
+	if( strXml == ""){
+		//obj = brand;
+			status.gotoAndStop(3);
+		//alertbox("Sku not found. Please create the item info and save.")
+	}else{
+	brand.text = xml.*.(@sku == sku.text).brand;
+	model.text = xml.*.(@sku == sku.text).model;
+	price.text = xml.*.(@sku == sku.text).price;
+	titleT.text = xml.*.(@sku == sku.text).tittle;
+	ram.text = xml.*.(@sku == sku.text).ram;
+	hd.text = xml.*.(@sku == sku.text).hd;
+	updateTagText();
+	status.gotoAndStop(2);
+	}
+	
+       
+	
+}
+
+function updateTagText():void{
+	tag.sku.text = sku.text;
+	   tag.brand.text = brand.text.toUpperCase();
+	   tag.model.text = model.text.toUpperCase();
+	   /*
+	   if(price.text.length <= 6){
+		   if(price.text.indexOf(".") > -1){
+			   	tag.price2.text = "";
+				tag.price.text = price.text.substr(0,price.text.indexOf("."));
+				tag.cents.text = price.text.substring(price.text.indexOf(".") + 1,price.text.length);
+		   }else if(price.text != ""){
+			    tag.price2.text = "";
+				tag.price.text = price.text;
+				tag.cents.text = "00";
+		   }else{
+		   		tag.price2.text = "";
+				tag.price.text = "";
+				tag.cents.text = "";
+		   }
+		}else if(price.text.length > 6){
+				tag.price.text = "";
+				tag.price2.text = price.text.substr(0,price.text.indexOf("."));
+				tag.cents.text = price.text.substring(price.text.indexOf(".") + 1,price.text.length);
+		}*/
+		trace(price.text.length > 6);
+	   tmpBTP = Number(price.text)
+	   if(tmpBTP > 0 && tmpBTP <= 399.99){
+				tag.btp.text = "229.99";
+			}else if(tmpBTP >= 400 && tmpBTP <= 599.99){
+				tag.btp.text = "269.99";
+			}else if(tmpBTP >= 600 && tmpBTP <= 749.99){
+				tag.btp.text = "299.99";
+			}else if(tmpBTP >= 750 && tmpBTP <= 999.99){
+				tag.btp.text = "329.99";
+			}else if(tmpBTP >= 1000 && tmpBTP <= 1499.99){
+				tag.btp.text = "399.99";
+			}else if(tmpBTP >= 1500){
+				tag.btp.text = "449.99";
+			}
+	   
+	   
+	   tag.titleT.text = titleT.text.toUpperCase();
+	   tag.ram.text = ram.text;
+	   tag.hd.text = hd.text;
+	   
+	   
+	   
+	   officePrice = office.office.text;
+       totalPrice = String(Number(price.text) + packPrice + Number(officePrice));
+	   if(totalPrice.length <= 6){
+		   if(totalPrice.indexOf(".") > -1){
+			   	tag.price2.text = "";
+				tag.price.text = totalPrice.substr(0,totalPrice.indexOf("."));
+				tag.cents.text = totalPrice.substring(totalPrice.indexOf(".") + 1,totalPrice.length);
+		   }else{
+			    tag.price2.text = "";
+				tag.price.text = totalPrice;
+				tag.cents.text = "00";
+		   }
+		}else{
+				tag.price.text = "";
+				tag.price2.text = totalPrice.substr(0,totalPrice.indexOf("."));
+				tag.cents.text = totalPrice.substring(totalPrice.indexOf(".") + 1,totalPrice.length);
+		}
+
+		switch(Number(bundle.selectedItem.data)){
+		case 3:
+			tag.bundle.officeprice1.text = "$" + officePrice;
+			tag.bundle.officeprice2.text = "";
+			tag.bundle.officeprice3.text = "";
+			break;
+		case 4:
+			tag.bundle.officeprice1.text = "";
+			tag.bundle.officeprice2.text = "$" + officePrice;
+			tag.bundle.officeprice3.text = "";
+			break;
+		case 5:
+			tag.bundle.officeprice1.text = "";
+			tag.bundle.officeprice2.text = "";
+			tag.bundle.officeprice3.text = "$" + officePrice;
+			break;
+		default:
+			tag.bundle.officeprice1.text = "";
+			tag.bundle.officeprice2.text = "";
+			tag.bundle.officeprice3.text = "";
+			break;
+	}
+	
+}
+
+function checkSkuValue():Boolean{
+	if(sku.text.length != 7 || isNaN(Number(sku.text))){
+		obj = sku;
+		status.gotoAndStop(4);
+		//alertbox("Please make sure to enter a correct sku before attempting to load.");
+		return false;
+		trace("sku false");
+	}
+	
+       trace("sku true");
+	return true;
+}
+
+function checkPrintValues():Boolean{
+
+	if(sku.text.length != 7 || isNaN(Number(sku.text))){
+		obj = sku;
+		alertbox("Please make sure to enter a correct sku before attempting to print.");
+		return false;
+	}else if(brand.text == ""){
+		obj = brand;
+		alertbox("Please make sure to enter a brand.");
+		return false;
+	}else if(model.text == ""){
+		obj = model;
+		alertbox("Please make sure to enter a model.");
+		return false;
+	}else if(price.text == "" || isNaN(Number(price.text))){
+		obj = price;
+		alertbox("Please make sure to enter a price.");
+		return false;
+	}else if(titleT.text == ""){
+		obj = titleT;
+		alertbox("Please make sure to enter a title.");
+		return false;
+	}else if(ram.text == "" || isNaN(Number(ram.text))){
+		obj = ram;
+		alertbox("Please make sure to enter amount of ram.");
+		return false;
+	}else if(hd.text == "" || isNaN(Number(hd.text))){
+		obj = hd;
+		alertbox("Please make sure to enter hard drive size.");
+		return false;
+	}else if(Number(bundle.selectedItem.data) == 0){
+		obj = bundle;
+		alertbox("Please make sure to select a package.");
+		return false;
+	}else if(((Number(bundle.selectedItem.data) >= 1 && Number(bundle.selectedItem.data) <= 4)) || Number(bundle.selectedItem.data) == 7){
+		if(Number(software.software.selectedItem.data) == 0){
+		obj = software.software;
+		alertbox("Please make sure to select a software title for your package.");
+		return false;}
+	}
+	
+	if(Number(bundle.selectedItem.data) >= 3 && Number(bundle.selectedItem.data) <= 5){
+		if(office.office.text == "" || isNaN(Number(office.office.text))){
+		obj = office.office;
+		alertbox("Please make sure to enter a price for office.");
+		return false;}
+	}
+       
+	return true;
+}
+
+function checkSkuValues():Boolean{
+	
+	if(sku.text.length != 7 || isNaN(Number(sku.text))){
+		obj = sku;
+		alertbox("Please make sure to enter a correct sku before attempting to save.");
+		return false;
+	}else if(brand.text == ""){
+		obj = brand;
+		alertbox("Please make sure to enter a brand.");
+		return false;
+	}else if(model.text == ""){
+		obj = model;		
+		alertbox("Please make sure to enter a model.");
+		return false;
+	}else if(price.text == "" || isNaN(Number(price.text))){
+		obj = price;
+		alertbox("Please make sure to enter a price.");
+		return false;
+	}else if(titleT.text == ""){
+		obj = titleT
+		alertbox("Please make sure to enter a title.");
+		return false;
+	}else if(ram.text == "" || isNaN(Number(ram.text))){
+		obj = ram
+		alertbox("Please make sure to enter amount of ram.");
+		return false;
+	}else if(hd.text == "" || isNaN(Number(hd.text))){
+		obj = hd;
+		alertbox("Please make sure to enter hard drive size.");
+		return false;
+	}
+       trace("sku true");
+	return true;
+}
+
+
+function ok_buttonClick(e:MouseEvent) {
+
+disable_mc.visible = false;
+popup.visible = false;
+
+sku.enabled = true;
+brand.enabled = true;
+model.enabled = true;
+price.enabled = true;
+titleT.enabled = true;
+ram.enabled = true;
+hd.enabled = true;
+bundle.enabled = true;
+software.software.enabled = true;
+office.office.enabled = true;
+//load_button.enabled = true;
+save_button.enabled = true;
+clear_button.enabled = true;
+print_button.enabled = true;
+fm2.deactivate();
+fm.activate();
+fm.setFocus(obj);
+
+obj = null;
+																				   
+}
+
+function alertbox(txt:String):void {
+fm.deactivate();
+fm2.activate();
+popup.msg.text = txt;
+disable_mc.visible = true;
+popup.visible = true;
+
+sku.enabled = false;
+brand.enabled = false;
+model.enabled = false;
+price.enabled = false;
+titleT.enabled = false;
+ram.enabled = false;
+hd.enabled = false;
+bundle.enabled = false;
+software.software.enabled = false;
+office.office.enabled = false;
+//load_button.enabled = false;
+save_button.enabled = false;
+clear_button.enabled = false;
+print_button.enabled = false;
+
+//fm.setFocus(popup.ok_button);
+fm2.defaultButton  = popup.ok_button;
+fm2.defaultButtonEnabled = true;
+}
